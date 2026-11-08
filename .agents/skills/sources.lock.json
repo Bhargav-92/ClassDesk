@@ -1,0 +1,473 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "repository": "https://github.com/shadcn-ui/ui",
+      "revision": "8ab27715521cbd4f87ae6886cd989cbb678f6de7",
+      "skill": "shadcn",
+      "files": [
+        {
+          "path": "shadcn/LICENSE.upstream",
+          "upstreamPath": "LICENSE.md",
+          "sha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f"
+        },
+        {
+          "path": "shadcn/SKILL.md",
+          "upstreamPath": "skills/shadcn/SKILL.md",
+          "sha256": "93951e5e83f616a3e046491c00d770bd54c0a64164706cd1191822a233d27592"
+        },
+        {
+          "path": "shadcn/agents/openai.yml",
+          "upstreamPath": "skills/shadcn/agents/openai.yml",
+          "sha256": "35db91b1eef58b2abe01da9b88577de5a44e233b740cd93d692ddeeadd2afe4d"
+        },
+        {
+          "path": "shadcn/assets/shadcn-small.png",
+          "upstreamPath": "skills/shadcn/assets/shadcn-small.png",
+          "sha256": "0ecc62d682727f68fc4937eed19960c706714fa084d44f63028d611ae02bf3d7"
+        },
+        {
+          "path": "shadcn/assets/shadcn.png",
+          "upstreamPath": "skills/shadcn/assets/shadcn.png",
+          "sha256": "7d60ad6fec4d89a0d44ba5a3c9283d2fea0047af5467f9227040e20d927d39b7"
+        },
+        {
+          "path": "shadcn/assets/showcase/color-pair.tsx",
+          "upstreamPath": "skills/shadcn/assets/showcase/color-pair.tsx",
+          "sha256": "6028f0b677912216822fdaf76ae6b8863c429916ed4a9626b73f4de4506f8ee4"
+        },
+        {
+          "path": "shadcn/assets/showcase/preview-states.css",
+          "upstreamPath": "skills/shadcn/assets/showcase/preview-states.css",
+          "sha256": "8d9e3cec24dd01b11c5ba12196d0376a131797d9ad247ea624e66eb8bbf61b0e"
+        },
+        {
+          "path": "shadcn/assets/showcase/state-matrix.tsx",
+          "upstreamPath": "skills/shadcn/assets/showcase/state-matrix.tsx",
+          "sha256": "07794119fe05ff735358b3f8ca30a8297617ab64dfb3901dce4d89fe5f443458"
+        },
+        {
+          "path": "shadcn/cli.md",
+          "upstreamPath": "skills/shadcn/cli.md",
+          "sha256": "a381e35bf36fe7bb851952c13707e01e82434fd7a4a4e53f6df26c6370838904"
+        },
+        {
+          "path": "shadcn/customization.md",
+          "upstreamPath": "skills/shadcn/customization.md",
+          "sha256": "a19e81c78843df255e85755e52659268d793845add845b34ad8091f62bff3af9"
+        },
+        {
+          "path": "shadcn/design-system-page.md",
+          "upstreamPath": "skills/shadcn/design-system-page.md",
+          "sha256": "c541d661af159548744be3e27f79e7da710ab83f9afd448a4346f7ff1531d328"
+        },
+        {
+          "path": "shadcn/design-system.md",
+          "upstreamPath": "skills/shadcn/design-system.md",
+          "sha256": "9ed11e93e7e80e34c8795d5ba82e5420ca905e8e9949fef79cbe9239184fd06b"
+        },
+        {
+          "path": "shadcn/evals/evals.json",
+          "upstreamPath": "skills/shadcn/evals/evals.json",
+          "sha256": "e82c747326a5c21e37a1c962274d36b1bfebb3e6602ee368b98e2dba5db18369"
+        },
+        {
+          "path": "shadcn/mcp.md",
+          "upstreamPath": "skills/shadcn/mcp.md",
+          "sha256": "8d696b4e45b7d0e337367248513bd9acebe8f3bcfd7b748c775e5a337c8f38c8"
+        },
+        {
+          "path": "shadcn/registry.md",
+          "upstreamPath": "skills/shadcn/registry.md",
+          "sha256": "4f239be36bd2b58e17047db1ca80ab7da00e15a8b73242e5e4d50d113c4caa05"
+        },
+        {
+          "path": "shadcn/rules/base-vs-radix.md",
+          "upstreamPath": "skills/shadcn/rules/base-vs-radix.md",
+          "sha256": "2b2deb47d004285220c1fc6b38bb2edc2d0ccbcdafd031b0b189d5d8ed0d1ba8"
+        },
+        {
+          "path": "shadcn/rules/chat.md",
+          "upstreamPath": "skills/shadcn/rules/chat.md",
+          "sha256": "4b4610d487ddc9751f3cfe0c554a06560ac723fcc2460abad77a1d3c7c9a4b95"
+        },
+        {
+          "path": "shadcn/rules/composition.md",
+          "upstreamPath": "skills/shadcn/rules/composition.md",
+          "sha256": "f282df828d83a91132a846ddb62eea149a7c7c94822e9ca88cfddf85af01aa41"
+        },
+        {
+          "path": "shadcn/rules/forms.md",
+          "upstreamPath": "skills/shadcn/rules/forms.md",
+          "sha256": "29593e14381e34626f8e0e9c15c59f3394b92a0623af6a6ec94585400123853c"
+        },
+        {
+          "path": "shadcn/rules/icons.md",
+          "upstreamPath": "skills/shadcn/rules/icons.md",
+          "sha256": "d4a58266648872d9ee07d0c2368843a1cb88b8253b7f528dd7bda9d68b6c2535"
+        },
+        {
+          "path": "shadcn/rules/styling.md",
+          "upstreamPath": "skills/shadcn/rules/styling.md",
+          "sha256": "f88fbd72dff862805b786dc7d7e4c74c83030fc278c5b97c993e4e665001798c"
+        },
+        {
+          "path": "shadcn/scripts/showcase-coverage.mjs",
+          "upstreamPath": "skills/shadcn/scripts/showcase-coverage.mjs",
+          "sha256": "fb593e0806414d23b51354a46881f0b2873afc226bda0926a22f83cbd60af2fa"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/TanStack/router",
+      "revision": "c156097786b685db61f535d2779cb2a52a6af8aa",
+      "skill": "tanstack-router",
+      "files": [
+        {
+          "path": "tanstack-router/LICENSE.upstream",
+          "upstreamPath": "LICENSE",
+          "sha256": "a405ee70c632bb938acb7ac5f210e814409b3760ea9d2329d8ed8ffcfd11a0e7"
+        },
+        {
+          "path": "tanstack-router/references/upstream/packages/react-router/skills/compositions/router-query/SKILL.md",
+          "upstreamPath": "packages/react-router/skills/compositions/router-query/SKILL.md",
+          "sha256": "b866bed6c12157ac1e5acc75f3d9628598367900a48544eb82e4c15dab2d4dab"
+        },
+        {
+          "path": "tanstack-router/references/upstream/packages/react-router/skills/lifecycle/migrate-from-react-router/SKILL.md",
+          "upstreamPath": "packages/react-router/skills/lifecycle/migrate-from-react-router/SKILL.md",
+          "sha256": "333e791b98df09bc18115fa8ed3cc255e81125cc7f0d7a6a7b2bc98823a561e0"
+        },
+        {
+          "path": "tanstack-router/references/upstream/packages/react-router/skills/react-router/SKILL.md",
+          "upstreamPath": "packages/react-router/skills/react-router/SKILL.md",
+          "sha256": "864c4c444ab3a1a6e03ea51513f5f1a6939dcc964abf535ae75517efb1213514"
+        },
+        {
+          "path": "tanstack-router/references/upstream/packages/router-core/skills/router-core/SKILL.md",
+          "upstreamPath": "packages/router-core/skills/router-core/SKILL.md",
+          "sha256": "03fc990919c2c025704de46ef87ee8efa133f811478a7eb66e04d11714608db0"
+        },
+        {
+          "path": "tanstack-router/references/upstream/packages/router-core/skills/router-core/auth-and-guards/SKILL.md",
+          "upstreamPath": "packages/router-core/skills/router-core/auth-and-guards/SKILL.md",
+          "sha256": "c250cce0c2e9eac7126ef1e5a69193285651eae118f984292b47ed47bc539606"
+        },
+        {
+          "path": "tanstack-router/references/upstream/packages/router-core/skills/router-core/code-splitting/SKILL.md",
+          "upstreamPath": "packages/router-core/skills/router-core/code-splitting/SKILL.md",
+          "sha256": "12604138af8a6c65ceb5f7303453bf2c62eb291bae6e89c7c6a63f789b88caf3"
+        },
+        {
+          "path": "tanstack-router/references/upstream/packages/router-core/skills/router-core/data-loading/SKILL.md",
+          "upstreamPath": "packages/router-core/skills/router-core/data-loading/SKILL.md",
+          "sha256": "9510f3b50763eb6a47db678accf6e25eaad0a865dd8e4658050472043e3cc9dd"
+        },
+        {
+          "path": "tanstack-router/references/upstream/packages/router-core/skills/router-core/navigation/SKILL.md",
+          "upstreamPath": "packages/router-core/skills/router-core/navigation/SKILL.md",
+          "sha256": "6d024af66514645e81347100f401ba8a1e2457cbe8b5024660ae9e409700ac80"
+        },
+        {
+          "path": "tanstack-router/references/upstream/packages/router-core/skills/router-core/not-found-and-errors/SKILL.md",
+          "upstreamPath": "packages/router-core/skills/router-core/not-found-and-errors/SKILL.md",
+          "sha256": "b79f903049856322275bd524de982172790b06416efb54760740ee7a8156f8cb"
+        },
+        {
+          "path": "tanstack-router/references/upstream/packages/router-core/skills/router-core/path-params/SKILL.md",
+          "upstreamPath": "packages/router-core/skills/router-core/path-params/SKILL.md",
+          "sha256": "caa1abefbf7751beaca3b1b55e5fe217cb56108cc037de757d7c5e8d09218b99"
+        },
+        {
+          "path": "tanstack-router/references/upstream/packages/router-core/skills/router-core/search-params/SKILL.md",
+          "upstreamPath": "packages/router-core/skills/router-core/search-params/SKILL.md",
+          "sha256": "e886e5c3285309a0e95c52e30e73d4ff52cffc366f0d97d02003b9696e8a8804"
+        },
+        {
+          "path": "tanstack-router/references/upstream/packages/router-core/skills/router-core/search-params/references/validation-patterns.md",
+          "upstreamPath": "packages/router-core/skills/router-core/search-params/references/validation-patterns.md",
+          "sha256": "ebf128309feaf027fbb229feffdd9bc6486bf09dedc224e903ed816abc38a1b2"
+        },
+        {
+          "path": "tanstack-router/references/upstream/packages/router-core/skills/router-core/ssr/SKILL.md",
+          "upstreamPath": "packages/router-core/skills/router-core/ssr/SKILL.md",
+          "sha256": "899e3e779500e95ff7d43c57af1ce01ed2238055b8b784253320bce4baf08492"
+        },
+        {
+          "path": "tanstack-router/references/upstream/packages/router-core/skills/router-core/type-safety/SKILL.md",
+          "upstreamPath": "packages/router-core/skills/router-core/type-safety/SKILL.md",
+          "sha256": "fc009f3dcf18fc2db2e5cf20b7dbb621e15f66959b405b8843e2911ca017bb83"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/TanStack/table",
+      "revision": "c14e0221b1e656c7bb35e7b3d4cdf188719a3599",
+      "skill": "tanstack-table",
+      "files": [
+        {
+          "path": "tanstack-table/LICENSE.upstream",
+          "upstreamPath": "LICENSE",
+          "sha256": "9db3f8ddd7031ab264b99bec49c221155d0c8649b53dd4aa007f2041d36cdf5f"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/react-table/skills/getting-started/SKILL.md",
+          "upstreamPath": "packages/react-table/skills/getting-started/SKILL.md",
+          "sha256": "b5ee51dd03349f1eba2a6cbd9f71056f9072325e301454db4820fc8bd2a4876c"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/react-table/skills/getting-started/references/create-table-hook.md",
+          "upstreamPath": "packages/react-table/skills/getting-started/references/create-table-hook.md",
+          "sha256": "cd301c3b68a8c37077276cbbd7330364c7c001775400b8445938d8bda18c4f71"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/react-table/skills/getting-started/references/with-tanstack-query.md",
+          "upstreamPath": "packages/react-table/skills/getting-started/references/with-tanstack-query.md",
+          "sha256": "8800b85b6acfe951cfd97dd940bdce2144ca0d19d9a1125f77093dcd4d7b6075"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/react-table/skills/getting-started/references/with-tanstack-virtual.md",
+          "upstreamPath": "packages/react-table/skills/getting-started/references/with-tanstack-virtual.md",
+          "sha256": "ba435d329c6be80b5c07f669daaff77c241aec1933c5f480e3f89543cc58b3c4"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/react-table/skills/migrate-v8-to-v9/SKILL.md",
+          "upstreamPath": "packages/react-table/skills/migrate-v8-to-v9/SKILL.md",
+          "sha256": "7adec57c587536706f9bc12a3150152731c38632d7db6e56a56a1b0fdfe5216b"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/react-table/skills/migrate-v8-to-v9/references/adapter-migration.md",
+          "upstreamPath": "packages/react-table/skills/migrate-v8-to-v9/references/adapter-migration.md",
+          "sha256": "3046ce13273aa807fcda85f08285fba0d9f13a7df293d74f3f1fff69608be111"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/react-table/skills/table-state/SKILL.md",
+          "upstreamPath": "packages/react-table/skills/table-state/SKILL.md",
+          "sha256": "85d5eca1e77015ec2ff0fca4ae4125c3017d0faefef8b9786ac46dc84ebe8f2d"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/react-table/skills/table-state/references/reactivity.md",
+          "upstreamPath": "packages/react-table/skills/table-state/references/reactivity.md",
+          "sha256": "3c5ddb6d5a372bbd01c2bf7ab4da59a43173ad0df8b1b1b9be0d43b05e58c14d"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/core/SKILL.md",
+          "upstreamPath": "packages/table-core/skills/core/SKILL.md",
+          "sha256": "9d106484fa1852e93689b7c58a1b54f0bf3913b2f149efcfbffc9ff97fdd67a8"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/core/references/api-not-found.md",
+          "upstreamPath": "packages/table-core/skills/core/references/api-not-found.md",
+          "sha256": "79dfb621af579af6417974847c094befa027e7ae0eb1e0c44d3e46b8e0a6f7cf"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/core/references/rows.md",
+          "upstreamPath": "packages/table-core/skills/core/references/rows.md",
+          "sha256": "9aa7d12b5b640bd769db7f74fd74e4452ba35467943ddeff2b53d0a86d3994be"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/core/references/typescript.md",
+          "upstreamPath": "packages/table-core/skills/core/references/typescript.md",
+          "sha256": "985a82d1f7df12dc76d0c7eb78bc1d0bcfd0d9d1b537daf7aa37868827a96ab0"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/custom-features/SKILL.md",
+          "upstreamPath": "packages/table-core/skills/custom-features/SKILL.md",
+          "sha256": "d763e961c3d613601c85e0882d92df1a561999518828200253564d1a3442c0a8"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/custom-features/references/plugin-example.md",
+          "upstreamPath": "packages/table-core/skills/custom-features/references/plugin-example.md",
+          "sha256": "56193f4149e0125f7a136f777bbed94921d4bafac9cf5f0ebf511aa831266b67"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/migrate-v8-to-v9/SKILL.md",
+          "upstreamPath": "packages/table-core/skills/migrate-v8-to-v9/SKILL.md",
+          "sha256": "17d75800e65063df20d9f6f7c04cb4337957adc0d867b5d0ab7b9536d56d9a01"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/migrate-v8-to-v9/references/architecture.md",
+          "upstreamPath": "packages/table-core/skills/migrate-v8-to-v9/references/architecture.md",
+          "sha256": "1fdee3c8151c39ac6562248c578a9bfca5647d52d359f631c5fd82b39c24c987"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/migrate-v8-to-v9/references/feature-apis.md",
+          "upstreamPath": "packages/table-core/skills/migrate-v8-to-v9/references/feature-apis.md",
+          "sha256": "6e30d85f8b1495dca8d1bb5ab99fb5bec02331c11004cb10b7985ba3a54eb49f"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/migrate-v8-to-v9/references/state.md",
+          "upstreamPath": "packages/table-core/skills/migrate-v8-to-v9/references/state.md",
+          "sha256": "04cf5dde3856f353a52f87529ed08c5f4314c2077fc631975954a2d58b48406d"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/migrate-v8-to-v9/references/typescript.md",
+          "upstreamPath": "packages/table-core/skills/migrate-v8-to-v9/references/typescript.md",
+          "sha256": "bf50c2378fde624fc3871926d83329d5d6ff10c2f556699eab7e66f9386b073a"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/SKILL.md",
+          "upstreamPath": "packages/table-core/skills/table-features/SKILL.md",
+          "sha256": "c2b638aadf95b5d0da028c168a889a47c6b1e389f8c64203fab01948228ac613"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/aggregation.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/aggregation.md",
+          "sha256": "29cddb8a31cf0bc01bee5f3d7e8d898a293ba8373a237bd22e6d3babdceeb495"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/cell-selection.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/cell-selection.md",
+          "sha256": "bd2637cd1fca6a5155b1dc380a5624c576b1ff198b5387a3dc80ae317e25d341"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/cell-spanning.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/cell-spanning.md",
+          "sha256": "a0765881bc1126d10ad1920d53767788aeb17561c3e1e7fe233c28a4b539603c"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/client-vs-server.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/client-vs-server.md",
+          "sha256": "d5d2881b28c33271ce1a9746e9b431b2d74aabbf1dc2ea874993b600a15840cf"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/column-faceting.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/column-faceting.md",
+          "sha256": "dee5eaa3782f38167ea24a738b8645a57b1742fe81702d87aa772ad61f252245"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/column-filtering.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/column-filtering.md",
+          "sha256": "b6d8a561ce4b2f2380e6ebbebfebd5124a4d453a4fd93aa9362f99d5c2182e55"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/column-ordering.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/column-ordering.md",
+          "sha256": "198d26a7a906e07b42fff83e40b81013aa2a69df96716b419873f79d22da95e9"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/column-pinning.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/column-pinning.md",
+          "sha256": "6eed7079782b4eaa65291f7de30757159da36efe1923cc41b127d8263cb6e2d7"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/column-resizing.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/column-resizing.md",
+          "sha256": "4073f947bd862d0508606ad2d8c9d319d520b360f51d9359032d383719d74947"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/column-sizing.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/column-sizing.md",
+          "sha256": "9baf42ec2ccf71c4124db014c944283301528b864d8157e881a4a50c1c0801f6"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/column-visibility.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/column-visibility.md",
+          "sha256": "4a4dd252971086d4de3a99179188049a5688f71380d2acad6912385d85196a1c"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/expanding.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/expanding.md",
+          "sha256": "17b28babcb910a79b39b0320739aca6a514525e4d37adb1b7f45a042301addb7"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/global-filtering.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/global-filtering.md",
+          "sha256": "f9a3a7a5c8213914a20d05e49b7f7f8da108f8721a56c52f91dbe95df34fb88a"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/grouping.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/grouping.md",
+          "sha256": "c070cd31b3f29e08fb2627f7ca349d27b546cc0994db1c303961c00508ec348d"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/pagination.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/pagination.md",
+          "sha256": "63d40437871895f985d4198180f793e2af98e5a7907e7bcbdb06c95740158d6d"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/row-pinning.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/row-pinning.md",
+          "sha256": "bc93832f1761dd760d33a2ae7f2b02c41b8dc52b4b6270fc42194ae7d084e193"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/row-selection.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/row-selection.md",
+          "sha256": "98757a782434f2d941fae523e7cbea333a8be0ef491426fcf0d4e5edd0b3d516"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-features/references/sorting.md",
+          "upstreamPath": "packages/table-core/skills/table-features/references/sorting.md",
+          "sha256": "02f3d0f1a4263631678b9783d269951849940246efb0ea8a9a4461d5dd8e1ab3"
+        },
+        {
+          "path": "tanstack-table/references/upstream/packages/table-core/skills/table-state/SKILL.md",
+          "upstreamPath": "packages/table-core/skills/table-state/SKILL.md",
+          "sha256": "a08393c3d8238f49d3f249134f4a2bf361883ad2d5d2bea29bc877c6234c3145"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/TanStack/query",
+      "revision": "8f6da1e2a1b5e9afd774cd12bd3865df5c432984",
+      "skill": "tanstack-query",
+      "files": [
+        {
+          "path": "tanstack-query/LICENSE.upstream",
+          "upstreamPath": "LICENSE",
+          "sha256": "a405ee70c632bb938acb7ac5f210e814409b3760ea9d2329d8ed8ffcfd11a0e7"
+        },
+        {
+          "path": "tanstack-query/references/upstream/docs/framework/react/guides/important-defaults.md",
+          "upstreamPath": "docs/framework/react/guides/important-defaults.md",
+          "sha256": "a3f02f4fb7e8dc010962e8ea0aab9f31f9d6f6d724e66dc44eabc155265a1f50"
+        },
+        {
+          "path": "tanstack-query/references/upstream/docs/framework/react/guides/infinite-queries.md",
+          "upstreamPath": "docs/framework/react/guides/infinite-queries.md",
+          "sha256": "977f5fb0cd3a3819c20c2160a4f38eb06a97d9dbc380817683411e544d602691"
+        },
+        {
+          "path": "tanstack-query/references/upstream/docs/framework/react/guides/optimistic-updates.md",
+          "upstreamPath": "docs/framework/react/guides/optimistic-updates.md",
+          "sha256": "0c32fabbe875f00ac62e7e1f70156e95e27eca0a8446b09005ca5faf6ec1ecc7"
+        },
+        {
+          "path": "tanstack-query/references/upstream/docs/framework/react/guides/paginated-queries.md",
+          "upstreamPath": "docs/framework/react/guides/paginated-queries.md",
+          "sha256": "59d450af46d5d22a983e5864356c3e6e8dab463ad64ff3265cc462f95e4e015f"
+        },
+        {
+          "path": "tanstack-query/references/upstream/docs/framework/react/guides/query-cancellation.md",
+          "upstreamPath": "docs/framework/react/guides/query-cancellation.md",
+          "sha256": "fc73340be44796b9bc3fddc7c41118a199ede9749cddad2dd21c728f5a403e2b"
+        },
+        {
+          "path": "tanstack-query/references/upstream/docs/framework/react/guides/query-invalidation.md",
+          "upstreamPath": "docs/framework/react/guides/query-invalidation.md",
+          "sha256": "e4cda3acadb7fb216fe6454ef55a790c2baa09a783fdd6c61b5b79d00faca63c"
+        },
+        {
+          "path": "tanstack-query/references/upstream/docs/framework/react/guides/query-keys.md",
+          "upstreamPath": "docs/framework/react/guides/query-keys.md",
+          "sha256": "dbd62ca3fc372cada909b9282e2f9ac94e4c695a078fee17b4660df2dd4ac413"
+        },
+        {
+          "path": "tanstack-query/references/upstream/docs/framework/react/guides/query-options.md",
+          "upstreamPath": "docs/framework/react/guides/query-options.md",
+          "sha256": "a41ef393863a3e5af8d525eee2106734369e8e5d639dc41978cfe9c6a4f86bb3"
+        },
+        {
+          "path": "tanstack-query/references/upstream/docs/framework/react/guides/ssr.md",
+          "upstreamPath": "docs/framework/react/guides/ssr.md",
+          "sha256": "647aec21b4af3d39d37f229288e1de8cd7523b739c689a076f4ae6cc7f165046"
+        },
+        {
+          "path": "tanstack-query/references/upstream/docs/framework/react/quick-start.md",
+          "upstreamPath": "docs/framework/react/quick-start.md",
+          "sha256": "33734d488d562f22d75ed104178c0d8bec560f6a4546311f400f8b05464a493b"
+        }
+      ]
+    }
+  ]
+}
