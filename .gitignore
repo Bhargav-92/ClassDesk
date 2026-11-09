@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+out/
+.output/
+.nitro/
+.vinxi/
+.wrangler/
+
+# Tanstack / tooling
+.tanstack/
+__unconfig*
+
+# Lock files (keep pnpm-lock.yaml, ignore npm's)
+package-lock.json
+
+# Editor
+.vscode/
+.idea/
+*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# TypeScript build info
+*.tsbuildinfo
