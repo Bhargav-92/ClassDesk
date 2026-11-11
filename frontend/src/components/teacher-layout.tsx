@@ -1,10 +1,10 @@
 import {
-	BookOpen,
-	CalendarDays,
-	GraduationCap,
-	PanelLeftClose,
-	Users,
-	Wallet,
+  BookOpen,
+  CalendarDays,
+  GraduationCap,
+  PanelLeftClose,
+  Users,
+  Wallet,
 } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import ThemeToggle from "./ThemeToggle";
@@ -51,12 +51,7 @@ export function TeacherLayout({
 						title="Attendance is coming soon"
 					>
 						<CalendarDays />
-					</span>
-					<span
-						className="nav-item unavailable"
-						title="Homework is coming soon"
-					>
-						<BookOpen />
+            Attandance
 					</span>
 					<a
 						className={`nav-item ${title === "Fees" ? "active" : ""}`}
