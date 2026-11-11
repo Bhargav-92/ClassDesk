@@ -56,17 +56,13 @@ export const students = pgTable(
     joinedOn: date("joined_on", { mode: "string" }).notNull(),
     // Default monthly fee in paise. Must be zero or greater.
     monthlyFee: integer("monthly_fee").notNull(),
-    // Day of month, 1 to 31.
-    feeDueDay: integer("fee_due_day").notNull(),
+    // Full student fee due date, serialized as YYYY-MM-DD.
+    feeDueDate: date("fee_due_date", { mode: "string" }).notNull(),
   },
   (table) => [
     check(
       "students_monthly_fee_check",
       sql`${table.monthlyFee} >= 0`
-    ),
-    check(
-      "students_fee_due_day_check",
-      sql`${table.feeDueDay} between 1 and 31`
     ),
   ]
 );

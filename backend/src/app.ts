@@ -6,6 +6,7 @@ import { attandanceRoute } from "./modules/attandance/attandance.routes.js";
 import { feesRouter } from "./modules/fees/fees.routes.js";
 import { getHealth } from "./modules/health/health.controller.js";
 import { healthRouter } from "./modules/health/health.routes.js";
+import { addStudent } from "./modules/students/students.controller.js";
 import { studentRouter } from "./modules/students/students.routes.js";
 
 export const app = express();
@@ -20,6 +21,7 @@ app.use("/api/health", healthRouter);
 
 // students routes
 app.use("/api/students", studentRouter);
+app.use("/api/addStudent",addStudent)
 
 // fees routes
 app.use("/api/fees", feesRouter);

@@ -14,7 +14,7 @@ async function main() {
         parentWhatsapp: "9876543210",
         joinedOn: "2026-11-01",
         monthlyFee: 250000,
-        feeDueDay: 5,
+        feeDueDate: "2026-11-05",
       },
       {
         fname: "Diya",
@@ -23,7 +23,7 @@ async function main() {
         parentlName: "Patel",
         joinedOn: "2026-11-03",
         monthlyFee: 200000,
-        feeDueDay: 10,
+        feeDueDate: "2026-11-10",
       },
     ])
     .returning({ id: students.id });

@@ -1,3 +1,4 @@
+import { CreateStudentSheet } from "./create-student-sheet";
 import { studentName, parentName } from "../columns/student-display";
 import { Spinner } from "@/components/app-loader";
 import { useState } from "react";
@@ -39,6 +40,7 @@ import { studentColumns } from "../columns/students-columns";
 const emptyStudents: never[] = [];
 export function StudentDirectory() {
 	const query = useStudents();
+	const [sheetOpen, setSheetOpen] = useState(false);
 	const students = query.data?.data ?? emptyStudents;
 	const isLoadingStudents =
 		!query.data && (query.isPending || query.isFetching);
@@ -88,7 +90,7 @@ export function StudentDirectory() {
 				"WhatsApp",
 				"Joined on",
 				"Monthly fee (INR)",
-				"Fee due day",
+				"Fee due date",
 			],
 			...rows.map(({ original: s }) => [
 				studentName(s),
@@ -96,7 +98,7 @@ export function StudentDirectory() {
 				s.parentWhatsapp,
 				s.joinedOn,
 				s.monthlyFee / 100,
-				s.feeDueDay,
+				s.feeDueDate,
 			]),
 		]
 			.map((row) => row.map(escape).join(","))
@@ -123,15 +125,35 @@ export function StudentDirectory() {
 					</h1>
 					<p>A familiar face. Every detail you need.</p>
 				</div>
-				<button
-					className="button primary"
-					onClick={exportStudents}
-					disabled={!filteredCount}
-				>
-					<ArrowDownToLine />
-					Export students
-				</button>
+				<div className="page-actions">
+					<button
+						type="button"
+						className="button primary"
+						onClick={() => {
+							setSheetOpen(true);
+						}}
+					>
+						Add student
+					</button>
+					<button
+						className="button"
+						onClick={exportStudents}
+						disabled={!filteredCount}
+					>
+						<ArrowDownToLine />
+						Export students
+					</button>
+				</div>
 			</div>
+			<CreateStudentSheet
+				open={sheetOpen}
+				onOpenChange={setSheetOpen}
+				onSaved={() => {
+					setSearch("");
+					setFilters([]);
+					table.setPageIndex(0);
+				}}
+			/>
 			<section className="summary-strip" aria-label="Student summary">
 				<div>
 					<span className="stat-icon">
@@ -259,23 +281,18 @@ export function StudentDirectory() {
 							/>
 						</label>
 						<label>
-							Fee due day
-							<select
+							Fee due date
+							<input
+								type="date"
+								aria-label="Filter by fee due date"
 								value={
-									(table.getColumn("feeDueDay")?.getFilterValue() as string) ??
+									(table.getColumn("feeDueDate")?.getFilterValue() as string) ??
 									""
 								}
 								onChange={(e) =>
-									table.getColumn("feeDueDay")?.setFilterValue(e.target.value)
+									table.getColumn("feeDueDate")?.setFilterValue(e.target.value)
 								}
-							>
-								<option value="">All days</option>
-								{Array.from({ length: 31 }, (_, i) => (
-									<option key={i + 1} value={i + 1}>
-										Day {i + 1}
-									</option>
-								))}
-							</select>
+							/>
 						</label>
 						<button
 							className="text-button"

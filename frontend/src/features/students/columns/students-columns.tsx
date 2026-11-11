@@ -66,11 +66,11 @@ export const studentColumns: ColumnDef<Student>[] = [
 		),
 	},
 	{
-		accessorKey: "feeDueDay",
-		header: "Fee due day",
+		accessorKey: "feeDueDate",
+		header: "Fee due date",
 		filterFn: (row, id, value) => !value || String(row.getValue(id)) === value,
 		cell: ({ getValue }) => (
-			<span className="day-badge">Day {getValue<number>()}</span>
+			<span className="day-badge">{dateLabel(getValue<string>())}</span>
 		),
 	},
 ];

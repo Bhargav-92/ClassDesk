@@ -1,6 +1,7 @@
-import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
-import { QueryClientProvider } from "@tanstack/react-query";
+import { AppToaster } from "@/components/app-toaster";
 import { createQueryClient } from "@/lib/query-client";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import appCss from "../styles.css?url";
 
@@ -32,6 +33,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<body>
 				<QueryClientProvider client={queryClient}>
 					{children}
+					<AppToaster />
 				</QueryClientProvider>
 				<Scripts />
 			</body>

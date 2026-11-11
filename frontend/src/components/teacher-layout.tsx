@@ -1,10 +1,9 @@
 import {
-	BookOpen,
-	CalendarDays,
-	GraduationCap,
-	PanelLeftClose,
-	Users,
-	Wallet,
+  CalendarDays,
+  GraduationCap,
+  PanelLeftClose,
+  Users,
+  Wallet
 } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import ThemeToggle from "./ThemeToggle";
@@ -28,14 +27,7 @@ export function TeacherLayout({
 						classdesk<span className="brand-dot">.</span>
 					</span>
 				</a>
-				<div className="workspace">
-					<span className="workspace-icon">C</span>
-					<div>
-						<strong>My classroom</strong>
-						<small>Teacher workspace</small>
-					</div>
-					<span className="workspace-status" />
-				</div>
+
 				<span className="nav-caption">WORKSPACE</span>
 				<nav aria-label="Workspace">
 					<a
@@ -63,20 +55,6 @@ export function TeacherLayout({
 						Fees
 					</a>
 				</nav>
-				<div className="sidebar-note">
-					<span className="note-icon">
-						<BookOpen />
-					</span>
-					<p>Your classroom, in one place.</p>
-				</div>
-				<div className="teacher-profile">
-					<span className="avatar teacher-avatar">T</span>
-					<div>
-						<strong>Teacher</strong>
-						<small>Personal workspace</small>
-					</div>
-					<span className="online-dot" />
-				</div>
 			</aside>
 			<div className="main-shell">
 				<header className="topbar">

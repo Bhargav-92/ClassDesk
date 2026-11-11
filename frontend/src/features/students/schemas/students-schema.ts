@@ -16,9 +16,9 @@ function isStudent(value: unknown): value is Student {
 		new Date(s.joinedOn).toISOString().slice(0, 10) === s.joinedOn &&
 		Number.isInteger(s.monthlyFee) &&
 		(s.monthlyFee as number) >= 0 &&
-		Number.isInteger(s.feeDueDay) &&
-		(s.feeDueDay as number) >= 1 &&
-		(s.feeDueDay as number) <= 31
+		typeof s.feeDueDate === "string" &&
+		/^\d{4}-\d{2}-\d{2}$/.test(s.feeDueDate) &&
+		!Number.isNaN(Date.parse(s.feeDueDate))
 	);
 }
 

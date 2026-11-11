@@ -8,3 +8,8 @@ export interface AttendanceRecord {
 	status: AttendanceStatus;
 }
 export type AttendanceResponse = ApiResponse<AttendanceRecord[]>;
+export interface CreateAttendancePayload {
+	studentId: string;
+	classDate: string;
+	status: AttendanceStatus;
+}

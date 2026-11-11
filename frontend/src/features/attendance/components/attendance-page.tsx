@@ -1,3 +1,4 @@
+import { CreateAttendanceSheet } from "./create-attendance-sheet";
 import { useState } from "react";
 import {
 	flexRender,
@@ -25,6 +26,7 @@ import type { AttendanceRecord } from "../types/attendance";
 const empty: AttendanceRecord[] = [];
 export function AttendancePage() {
 	const query = useAttendance();
+	const [sheetOpen, setSheetOpen] = useState(false);
 	const data = query.data?.data ?? empty;
 	const loading = !query.data && (query.isPending || query.isFetching);
 	const [search, setSearch] = useState("");
@@ -59,17 +61,33 @@ export function AttendancePage() {
 					</h1>
 					<p>A clear record of who was here.</p>
 				</div>
-				<button
-					className="button"
-					disabled={query.isFetching}
-					onClick={() => {
-						void query.refetch();
-					}}
-				>
-					<RefreshCw className={query.isFetching ? "spinning" : ""} />
-					Refresh attendance
-				</button>
+				<div className="page-actions">
+					<button
+						type="button"
+						className="button primary"
+						onClick={() => {
+							setSheetOpen(true);
+						}}
+					>
+						Mark attendance
+					</button>
+					<button
+						className="button"
+						disabled={query.isFetching}
+						onClick={() => {
+							void query.refetch();
+						}}
+					>
+						<RefreshCw className={query.isFetching ? "spinning" : ""} />
+						Refresh attendance
+					</button>
+				</div>
 			</div>
+			<CreateAttendanceSheet
+				open={sheetOpen}
+				onOpenChange={setSheetOpen}
+				onSaved={() => {}}
+			/>
 			<section className="summary-strip" aria-label="Attendance summary">
 				{(["present", "absent", "late"] as const).map((status) => (
 					<div key={status}>
