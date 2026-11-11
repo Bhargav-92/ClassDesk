@@ -1,3 +1,4 @@
+import { authRouter, requireAuth } from "./modules/auth/auth.routes.js";
 import cors from "cors";
 import express from "express";
 import { env } from "./config/env.js";
@@ -19,6 +20,9 @@ app.get("/", getHealth);
 
 app.use("/api/health", healthRouter);
 
+app.use("/api/auth", authRouter);
+app.use("/api", requireAuth);
+
 // students routes
 app.use("/api/students", studentRouter);
 app.use("/api/addStudent",addStudent)
@@ -33,3 +37,4 @@ app.use("/api/attandance",attandanceRoute)
 
 app.use(notFound);
 app.use(errorHandler);
+

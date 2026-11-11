@@ -11,9 +11,24 @@ export const api = axios.create({
 	headers: { "Content-Type": "application/json" },
 });
 
+api.interceptors.request.use((config) => {
+	if (typeof window !== "undefined") {
+		const token = sessionStorage.getItem("classdesk-token");
+		if (token) config.headers.Authorization = `Bearer ${token}`;
+	}
+	return config;
+});
 api.interceptors.response.use(
 	(response) => response,
 	(error: AxiosError<{ message?: string }>) => {
+		if (
+			error.response?.status === 401 &&
+			!error.config?.url?.includes("/auth/login") &&
+			typeof window !== "undefined"
+		) {
+			sessionStorage.removeItem("classdesk-token");
+			window.dispatchEvent(new Event("classdesk:unauthorized"));
+		}
 		const normalized: ApiError = Object.assign(
 			new Error(
 				error.response?.data?.message ||

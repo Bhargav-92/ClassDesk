@@ -12,7 +12,8 @@
     "preview": "vite preview",
     "format": "biome format",
     "lint": "biome lint",
-    "check": "biome check"
+    "check": "biome check",
+    "start": "node .output/server/index.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^7.0.5",

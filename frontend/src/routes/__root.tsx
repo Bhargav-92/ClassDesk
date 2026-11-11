@@ -1,3 +1,4 @@
+import { AuthGate } from "@/features/auth/components/auth-gate";
 import { AppToaster } from "@/components/app-toaster";
 import { createQueryClient } from "@/lib/query-client";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -32,7 +33,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			</head>
 			<body>
 				<QueryClientProvider client={queryClient}>
-					{children}
+					<AuthGate>{children}</AuthGate>
 					<AppToaster />
 				</QueryClientProvider>
 				<Scripts />

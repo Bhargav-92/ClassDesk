@@ -1,9 +1,10 @@
+import { useAuth } from "@/features/auth/components/auth-gate";
 import {
-  CalendarDays,
-  GraduationCap,
-  PanelLeftClose,
-  Users,
-  Wallet
+	CalendarDays,
+	GraduationCap,
+	PanelLeftClose,
+	Users,
+	Wallet,
 } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import ThemeToggle from "./ThemeToggle";
@@ -15,6 +16,7 @@ export function TeacherLayout({
 	studentCount?: number;
 	children: ReactNode;
 }) {
+	const { signOut } = useAuth();
 	const [collapsed, setCollapsed] = useState(false);
 	return (
 		<div className={`teacher-app ${collapsed ? "sidebar-collapsed" : ""}`}>
@@ -91,7 +93,9 @@ export function TeacherLayout({
 								Attendance
 							</a>
 						</nav>
-						<span className="portal-label">Teacher portal</span>
+						<button className="text-button" type="button" onClick={signOut}>
+							Sign out
+						</button>
 						<ThemeToggle />
 						<span className="avatar top-avatar">T</span>
 					</div>
@@ -101,3 +105,4 @@ export function TeacherLayout({
 		</div>
 	);
 }
+
