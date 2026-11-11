@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express";
 import { env } from "./config/env.js";
 import { errorHandler, notFound } from "./middleware/error-handler.js";
+import { attandanceRoute } from "./modules/attandance/attandance.routes.js";
 import { feesRouter } from "./modules/fees/fees.routes.js";
 import { getHealth } from "./modules/health/health.controller.js";
 import { healthRouter } from "./modules/health/health.routes.js";
@@ -22,6 +23,11 @@ app.use("/api/students", studentRouter);
 
 // fees routes
 app.use("/api/fees", feesRouter);
+
+
+// attandance routes
+app.use("/api/attandance",attandanceRoute)
+
 
 app.use(notFound);
 app.use(errorHandler);

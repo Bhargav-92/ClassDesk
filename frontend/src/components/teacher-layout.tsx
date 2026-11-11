@@ -1,10 +1,10 @@
 import {
-  BookOpen,
-  CalendarDays,
-  GraduationCap,
-  PanelLeftClose,
-  Users,
-  Wallet,
+	BookOpen,
+	CalendarDays,
+	GraduationCap,
+	PanelLeftClose,
+	Users,
+	Wallet,
 } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import ThemeToggle from "./ThemeToggle";
@@ -12,7 +12,7 @@ export function TeacherLayout({
 	title,
 	children,
 }: {
-	title: "Students" | "Fees";
+	title: "Students" | "Fees" | "Attendance";
 	studentCount?: number;
 	children: ReactNode;
 }) {
@@ -46,13 +46,14 @@ export function TeacherLayout({
 						<Users />
 						Students
 					</a>
-					<span
-						className="nav-item unavailable"
-						title="Attendance is coming soon"
+					<a
+						className={`nav-item ${title === "Attendance" ? "active" : ""}`}
+						href="/attendance"
+						aria-current={title === "Attendance" ? "page" : undefined}
 					>
 						<CalendarDays />
-            Attandance
-					</span>
+						Attendance
+					</a>
 					<a
 						className={`nav-item ${title === "Fees" ? "active" : ""}`}
 						href="/fees"
@@ -104,6 +105,12 @@ export function TeacherLayout({
 								aria-current={title === "Fees" ? "page" : undefined}
 							>
 								Fees
+							</a>
+							<a
+								href="/attendance"
+								aria-current={title === "Attendance" ? "page" : undefined}
+							>
+								Attendance
 							</a>
 						</nav>
 						<span className="portal-label">Teacher portal</span>

@@ -88,3 +88,15 @@ h1 { font-size:35px; font-weight:600; letter-spacing:-1.3px; line-height:1.2; ma
 @media(max-width:850px) { .mobile-page-nav { display:flex; gap:12px; font-size:12px; }.mobile-page-nav a[aria-current=page] { color:var(--accent); font-weight:600; } }
 .main-shell { min-width:0; }
 @media(max-width:560px) { .payment-month { flex-wrap:wrap; }.breadcrumb { gap:10px; }.topbar { gap:10px; }.topbar-right { gap:8px; }.mobile-page-nav { gap:9px; } }
+
+.attendance-status { display:inline-flex; align-items:center; gap:6px; padding:5px 9px; border-radius:5px; font-size:11px; text-transform:capitalize; background:var(--soft); color:var(--foreground); }
+.attendance-status::before { content:""; width:5px; height:5px; border-radius:50%; background:currentColor; }
+.status-present { background:var(--accent-soft); color:var(--accent-text); }
+.status-absent { color:#a33f48; background:#faedf0; }
+.status-late { color:#916415; background:#fbf2df; }
+.dark .status-absent { color:#f0a2ac; background:#41292e; }
+.dark .status-late { color:#e8c47d; background:#3d3423; }
+.status-label { text-transform:capitalize; }
+.payment-month select { padding:7px; border:1px solid var(--border); border-radius:5px; color:var(--foreground); background:var(--surface); }
+.table-toolbar .toolbar-actions { flex-wrap:wrap; }
+@media(max-width:560px) { .topbar { height:auto; min-height:62px; flex-wrap:wrap; padding-block:12px; }.topbar-right { flex-wrap:wrap; }.mobile-page-nav { gap:12px; } }

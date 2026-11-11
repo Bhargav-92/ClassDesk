@@ -54,6 +54,7 @@ async function main() {
 
     console.log("Inserted monthly fee and payment for student", studentId);
   });
+
 }
 
 try {
