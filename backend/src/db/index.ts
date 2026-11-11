@@ -1,15 +1,9 @@
-import "dotenv/config";
+import { env } from "../config/env.js";
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
 
-const connectionString = process.env.DATABASE_URL;
-
-if (!connectionString) {
-  throw new Error("DATABASE_URL is missing from .env");
-}
-
 export const pool = new Pool({
-  connectionString,
+  connectionString: env.databaseUrl,
   connectionTimeoutMillis: 5000,
 });
 

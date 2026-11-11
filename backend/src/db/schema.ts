@@ -48,8 +48,10 @@ export const students = pgTable(
   "students",
   {
     id: uuid("id").defaultRandom().primaryKey(),
-    name: text("name").notNull(),
-    parentName: text("parent_name"),
+    fname:text("first_name").notNull(),
+    lname:text("last_name").notNull(),
+    parentfName: text("parent_first_name"),
+    parentlName: text("parent_last_name"),
     parentWhatsapp: text("parent_whatsapp"),
     joinedOn: date("joined_on", { mode: "string" }).notNull(),
     // Default monthly fee in paise. Must be zero or greater.

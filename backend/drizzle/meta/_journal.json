@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1794316719010,
+      "tag": "0000_lumpy_shatterstar",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794411921265,
+      "tag": "0001_split-student-names",
+      "breakpoints": true
+    }
+  ]
+}
