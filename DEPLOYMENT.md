@@ -1,6 +1,6 @@
 # Launch ClassDesk demo: Vercel + Render
 
-This is a public demo using sample data and one demo login. No deployment was performed by the assistant.
+This is a public demo using sample data and database-backed teacher logins. No deployment was performed by the assistant.
 
 ## 1. Push the repository
 
@@ -31,12 +31,10 @@ Set environment variables in Render:
 - `NODE_ENV`: `production`
 - `DATABASE_URL`: your hosted PostgreSQL internal connection URL
 - `FRONTEND_URL`: your final Vercel frontend origin, e.g. `https://your-project.vercel.app` (no trailing slash)
-- `DEMO_EMAIL`: your chosen demo account email
-- `DEMO_PASSWORD`: a new private demo password; set it on the backend only
 
 Render provides `PORT`; do not hardcode a localhost port there. The start command applies committed migrations before starting the API. It does not seed records automatically.
 
-The demo account uses backend-verified credentials and random bearer session tokens. Sessions expire after 12 hours, end on sign-out, and are cleared when the API restarts. Keep this single-instance demo on sample data. There is no registration/password-reset flow.
+Teacher accounts in the users table use bcrypt password hashes verified by the backend and random bearer session tokens. Sessions expire after 12 hours, end on sign-out, and are cleared when the API restarts. Keep this single-instance demo on sample data. There is no registration/password-reset flow. Create the teacher record in the hosted database before signing in. Never store a plaintext password in password_hash. The optional user seed reads SEED_USER_NAME, SEED_USER_EMAIL and SEED_USER_PASSWORD privately; run pnpm exec tsx src/db/user-seed.ts from backend, then remove those seed variables. Existing accounts are not overwritten.
 
 ## 4. Deploy the frontend on Vercel
 
