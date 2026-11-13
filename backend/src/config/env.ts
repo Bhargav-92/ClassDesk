@@ -26,10 +26,4 @@ try {
   throw new Error("FRONTEND_URL must be an HTTP(S) origin without a trailing slash");
 }
 
-const demoEmail = process.env.DEMO_EMAIL?.trim();
-const demoPassword = process.env.DEMO_PASSWORD;
-if (!demoEmail || !demoPassword) {
-  throw new Error("DEMO_EMAIL and DEMO_PASSWORD must be configured privately");
-}
-
-export const env = { port, databaseUrl, frontendUrl, demoEmail, demoPassword };
+export const env = { port, databaseUrl, frontendUrl };

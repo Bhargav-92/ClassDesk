@@ -1,42 +1,42 @@
-import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
-import { env } from "../../config/env.js";
+import { randomBytes } from "node:crypto";
+import { compare, hash } from "bcryptjs";
 import { AppError } from "../../utils/app-error.js";
 import { HTTP_STATUS } from "../../utils/http-status.js";
+import { findUserByEmail } from "./auth.repository.js";
 
-const email = env.demoEmail.toLowerCase();
-const password = env.demoPassword;
-export const demoUser = { name: "Anjali", email };
-const sessions = new Map<string, number>();
+type AuthUser = { id: string; name: string; email: string };
+const sessions = new Map<string, { user: AuthUser; expires: number }>();
 const sessionDurationMs = 12 * 60 * 60 * 1000;
+// Perform password work even when the email is unknown.
+const dummyHash = hash(randomBytes(32).toString("hex"), 12);
 
-function digest(value: string) {
-  return createHash("sha256").update(value).digest();
-}
-
-export function login(emailInput: string, passwordInput: string) {
-  const matches = emailInput.toLowerCase() === email &&
-    timingSafeEqual(digest(passwordInput), digest(password));
-  if (!matches) {
+export async function login(email: string, password: string) {
+  const record = await findUserByEmail(email.trim());
+  const matches = await compare(password, record?.passwordHash ?? await dummyHash);
+  if (!record || !matches) {
     throw new AppError(HTTP_STATUS.UNAUTHORIZED, "Email or password is incorrect");
   }
-
   const now = Date.now();
-  for (const [token, expires] of sessions) {
-    if (expires <= now) sessions.delete(token);
+  for (const [token, session] of sessions) {
+    if (session.expires <= now) sessions.delete(token);
   }
-
+  const user = { id: record.id, name: record.name, email: record.email };
   const token = randomBytes(32).toString("base64url");
-  sessions.set(token, now + sessionDurationMs);
-  return { token, user: demoUser };
+  sessions.set(token, { user, expires: now + sessionDurationMs });
+  return { token, user };
+}
+
+export function getSessionUser(token: string): AuthUser | undefined {
+  const session = sessions.get(token);
+  if (!session || session.expires <= Date.now()) {
+    sessions.delete(token);
+    return undefined;
+  }
+  return session.user;
 }
 
 export function verifySession(token: string): boolean {
-  const expires = sessions.get(token);
-  if (!expires || expires <= Date.now()) {
-    sessions.delete(token);
-    return false;
-  }
-  return true;
+  return Boolean(getSessionUser(token));
 }
 
 export function logout(token: string): void {
