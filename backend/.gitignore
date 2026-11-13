@@ -19,3 +19,7 @@ dist/
 .DS_Store
 Thumbs.db
 
+
+# Keep environment secrets local; commit only sanitized templates.
+.env.*
+!.env.example

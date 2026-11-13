@@ -31,8 +31,8 @@ Set environment variables in Render:
 - `NODE_ENV`: `production`
 - `DATABASE_URL`: your hosted PostgreSQL internal connection URL
 - `FRONTEND_URL`: your final Vercel frontend origin, e.g. `https://your-project.vercel.app` (no trailing slash)
-- `DEMO_EMAIL`: `anjali@gmail.com`
-- `DEMO_PASSWORD`: the demo password supplied in chat; set it on the backend only
+- `DEMO_EMAIL`: your chosen demo account email
+- `DEMO_PASSWORD`: a new private demo password; set it on the backend only
 
 Render provides `PORT`; do not hardcode a localhost port there. The start command applies committed migrations before starting the API. It does not seed records automatically.
 

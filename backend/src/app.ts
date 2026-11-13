@@ -1,4 +1,5 @@
-import { authRouter, requireAuth } from "./modules/auth/auth.routes.js";
+import { authRouter } from "./modules/auth/auth.routes.js";
+import { requireAuth } from "./middleware/auth.middleware.js";
 import cors from "cors";
 import express from "express";
 import { env } from "./config/env.js";

@@ -11,3 +11,7 @@ dist-ssr
 .vinxi
 __unconfig*
 todos.json
+
+# Keep environment secrets local; commit only sanitized templates.
+.env.*
+!.env.example
