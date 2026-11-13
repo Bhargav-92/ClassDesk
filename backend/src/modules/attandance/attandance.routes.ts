@@ -1,6 +1,7 @@
 import { Router } from "express";
-import { getAttandance } from "./attandance.controller.js";
+import { addAttandance, getAttandance } from "./attandance.controller.js";
 
 export const attandanceRoute = Router()
 
 attandanceRoute.get('/', getAttandance)
+attandanceRoute.post('/',addAttandance)

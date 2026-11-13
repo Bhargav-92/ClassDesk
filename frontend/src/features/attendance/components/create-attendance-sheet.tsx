@@ -115,8 +115,7 @@ function AttendanceForm({
 									<option value="">Choose a student</option>
 									{options.map((s) => (
 										<option key={s.id} value={s.id}>
-											{studentName(s)} · Joined {s.joinedOn} ·{" "}
-											{s.id.slice(0, 8)}
+											{studentName(s)}
 										</option>
 									))}
 								</select>
