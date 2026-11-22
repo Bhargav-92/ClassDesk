@@ -137,18 +137,18 @@ class _SyncPanel extends StatefulWidget {
 
 class _SyncPanelState extends State<_SyncPanel> {
   SyncController get _sync => widget.controller;
-  late final _endpoint = TextEditingController(
-    text:
-        _sync.credentials?.endpoint.toString() ??
-        const String.fromEnvironment('CLASS_DESK_SYNC_URL'),
+  static const _hostedEndpoint = String.fromEnvironment(
+    'CLASS_DESK_SYNC_URL',
+    defaultValue: 'https://classdesk-qcvs.onrender.com',
   );
+  static const _defaultEndpoint = 'https://classdesk-qcvs.onrender.com';
+
   final _token = TextEditingController();
   String? _configError;
   bool _saving = false;
 
   @override
   void dispose() {
-    _endpoint.dispose();
     _token.dispose();
     super.dispose();
   }
@@ -159,22 +159,20 @@ class _SyncPanelState extends State<_SyncPanel> {
       _configError = null;
     });
     try {
+      final endpoint =
+          _sync.credentials?.endpoint.toString() ??
+          (_hostedEndpoint.isEmpty ? _defaultEndpoint : _hostedEndpoint);
       final token = _token.text.trim();
-      final endpoint = _endpoint.text;
-      final previous = _sync.credentials;
-      if (token.isEmpty &&
-          previous != null &&
-          endpoint.trim().replaceFirst(RegExp(r'/+$'), '') !=
-              previous.endpoint.toString()) {
-        throw const FormatException('Enter the token for the new backend URL.');
+      if (token.isNotEmpty || _sync.credentials == null) {
+        if (token.length < 32 || RegExp(r'\s').hasMatch(token)) {
+          throw const FormatException(
+            'Enter the setup code from your administrator.',
+          );
+        }
+        await _sync.configure(SyncCredentials(endpoint, token));
+        if (mounted) _token.clear();
       }
-      await _sync.configure(
-        SyncCredentials(
-          endpoint,
-          token.isEmpty ? previous?.token ?? '' : token,
-        ),
-      );
-      if (mounted) _token.clear();
+      await _sync.run();
     } on FormatException catch (issue) {
       if (mounted) setState(() => _configError = issue.message);
     } on Exception {
@@ -196,10 +194,7 @@ class _SyncPanelState extends State<_SyncPanel> {
           padding: const EdgeInsets.all(24),
           shrinkWrap: true,
           children: [
-            Text(
-              'Manual sync',
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
+            Text('Sync', style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 8),
             Text('${_sync.pending} changes waiting'),
             if (_sync.lastSuccess case final time?)
@@ -217,17 +212,12 @@ class _SyncPanelState extends State<_SyncPanel> {
                 style: TextStyle(color: Theme.of(context).colorScheme.error),
               ),
             const SizedBox(height: 24),
-            TextField(
-              controller: _endpoint,
-              enabled: !_sync.running && !_saving,
-              keyboardType: TextInputType.url,
-              autocorrect: false,
-              decoration: const InputDecoration(
-                labelText: 'Backend URL',
-                border: OutlineInputBorder(),
+            if (_sync.credentials == null) ...[
+              const Text(
+                'Enter the setup code from your administrator to connect this device.',
               ),
-            ),
-            const SizedBox(height: 12),
+              const SizedBox(height: 12),
+            ],
             TextField(
               controller: _token,
               enabled: !_sync.running && !_saving,
@@ -236,8 +226,8 @@ class _SyncPanelState extends State<_SyncPanel> {
               enableSuggestions: false,
               decoration: InputDecoration(
                 labelText: _sync.credentials == null
-                    ? 'Sync token'
-                    : 'Replace saved token (optional)',
+                    ? 'Setup code'
+                    : 'New setup code (optional)',
                 border: const OutlineInputBorder(),
               ),
             ),
@@ -247,23 +237,12 @@ class _SyncPanelState extends State<_SyncPanel> {
                 style: TextStyle(color: Theme.of(context).colorScheme.error),
               ),
             const SizedBox(height: 16),
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: [
-                OutlinedButton(
-                  onPressed: _sync.running || _saving ? null : _save,
-                  child: const Text('Save settings'),
-                ),
-                FilledButton.icon(
-                  onPressed:
-                      _sync.running || _saving || _sync.credentials == null
-                      ? null
-                      : _sync.run,
-                  icon: const Icon(LucideIcons.refreshCw),
-                  label: Text(_sync.error == null ? 'Sync now' : 'Retry'),
-                ),
-              ],
+            FilledButton.icon(
+              onPressed: _sync.running || _saving ? null : _save,
+              icon: const Icon(LucideIcons.refreshCw),
+              label: Text(
+                _sync.credentials == null ? 'Connect and sync' : 'Sync now',
+              ),
             ),
           ],
         ),

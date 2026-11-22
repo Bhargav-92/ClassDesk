@@ -76,7 +76,7 @@ class HttpSyncTransport implements SyncTransport {
     final response = await request.timeout(const Duration(seconds: 25));
     if (response.statusCode != 200) {
       final message = switch (response.statusCode) {
-        401 => 'The sync token was rejected. Check Settings.',
+        401 => 'The setup code was rejected. Enter a new code in Settings.',
         403 => 'The server does not allow this browser origin.',
         409 =>
           'A local record conflicts with the server. Your local edits are still saved.',
