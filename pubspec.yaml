@@ -21,6 +21,14 @@ version: 1.0.1+2
 environment:
   sdk: ^3.10.0
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.png"
+  min_sdk_android: 21 # optional, recommended for adaptive icons
+  remove_alpha_ios: true # prevents App Store rejection due to transparency
+
+
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
 # consider running `flutter pub upgrade --major-versions`. Alternatively,
@@ -60,6 +68,7 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   shared_preferences_platform_interface: ^2.4.2
   sqflite_common_ffi: ^2.4.7
+  flutter_launcher_icons: ^0.14.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
