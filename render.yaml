@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: class-desk-api
+    runtime: node
+    plan: free
+    region: singapore
+    rootDir: backend
+    buildCommand: corepack pnpm install --frozen-lockfile
+    startCommand: corepack pnpm run migrate && corepack pnpm start
+    envVars:
+      - key: NODE_VERSION
+        value: "24.22.1"
+      - key: DATABASE_URL
+        sync: false
+      - key: SYNC_TOKEN
+        generateValue: true
