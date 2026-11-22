@@ -1,0 +1,140 @@
+generator client {
+  provider = "prisma-client"
+  output   = "./generated"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Students {
+  id String @id @db.Uuid
+  created_at BigInt
+  updated_at BigInt
+  is_deleted Boolean @default(false)
+  sync_status String @default("synced")
+  name String
+  batch String
+  parent_name String
+  parent_whatsapp String
+  monthly_fee_paise BigInt
+  joining_date String
+  notes String?
+
+  assignments Homework[]
+  feePlans FeePlans[]
+  feeRecords FeeRecords[]
+  messages MessageLog[]
+  @@map("students")
+}
+
+model FeePlans {
+  id String @id @db.Uuid
+  created_at BigInt
+  updated_at BigInt
+  is_deleted Boolean @default(false)
+  sync_status String @default("synced")
+  student_id String @db.Uuid
+  amount_paise BigInt
+  due_day Int
+
+  student Students @relation(fields: [student_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  @@map("fee_plans")
+}
+
+model FeeRecords {
+  id String @id @db.Uuid
+  created_at BigInt
+  updated_at BigInt
+  is_deleted Boolean @default(false)
+  sync_status String @default("synced")
+  student_id String @db.Uuid
+  month String
+  amount_due_paise BigInt
+  due_date String
+
+  student Students @relation(fields: [student_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  payments Payments[]
+  promises Promises[]
+  @@map("fee_records")
+}
+
+model Payments {
+  id String @id @db.Uuid
+  created_at BigInt
+  updated_at BigInt
+  is_deleted Boolean @default(false)
+  sync_status String @default("synced")
+  fee_record_id String @db.Uuid
+  amount_paise BigInt
+  paid_on String
+  mode String
+  razorpay_payment_id String? @unique
+  note String?
+
+  feeRecord FeeRecords @relation(fields: [fee_record_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  @@map("payments")
+}
+
+model Promises {
+  id String @id @db.Uuid
+  created_at BigInt
+  updated_at BigInt
+  is_deleted Boolean @default(false)
+  sync_status String @default("synced")
+  fee_record_id String @db.Uuid
+  remaining_amount_paise BigInt
+  promised_date String
+  reminder_sent Boolean
+
+  feeRecord FeeRecords @relation(fields: [fee_record_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  @@map("promises")
+}
+
+model Homework {
+  student_id String? @db.Uuid
+  student Students? @relation(fields: [student_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  id String @id @db.Uuid
+  created_at BigInt
+  updated_at BigInt
+  is_deleted Boolean @default(false)
+  sync_status String @default("synced")
+  batch String
+  subject String
+  title String
+  description String
+  due_date String
+
+  messages MessageLog[]
+  @@index([student_id], map: "homework_student_idx")
+  @@map("homework")
+}
+
+model MessageLog {
+  id String @id @db.Uuid
+  created_at BigInt
+  updated_at BigInt
+  is_deleted Boolean @default(false)
+  sync_status String @default("synced")
+  student_id String @db.Uuid
+  homework_id String? @db.Uuid
+  type String
+  sent_at BigInt
+
+  student Students @relation(fields: [student_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  homework Homework? @relation(fields: [homework_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  @@map("message_log")
+}
+
+model SyncClock {
+  id Int @id
+  revision BigInt
+  @@map("sync_clock")
+}
+
+model SyncChange {
+  revision BigInt @id
+  table_name String
+  row_data Json
+  @@map("sync_changes")
+}
